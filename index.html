@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<div id="map-canvas" style="margin-left:auto; margin-right:auto; width:800px; height:500px"> </div>
+		<div id="map-canvas" style="margin-left:auto; margin-right:auto; width:400px; height:250px"> </div>
 		<link media="screen" type="text/css" rel="stylesheet" href="//cdn.aerisjs.com/aeris-interactive/assets/css/default/style.css">
 		
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAm8px3bGu6N8CBodzurFU6dZp83IyYe5E"></script><script type="text/javascript" src="//cdn.aerisjs.com/aeris-interactive/aim-gmaps.js"></script><script type="text/javascript">
@@ -16,11 +16,11 @@
 				el: '#map-canvas',
 				modules: {
 					  map: {
-						zoom: 4,
+						zoom: 6,
 						center: [48.538148, -123.463368]
 						},
 					localWeather: {
-                				showOnInit: true
+                				showOnInit: false
            					}, 
 					geosearch: {
                 				geolocate: true
