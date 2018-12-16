@@ -15,11 +15,13 @@
 				apiSecret: 'WvyNmj1nubTD48RF33eVN5iRmrgHkB4bTH0mwn0l',
 				el: '#map-canvas',
 				modules: {
-								map: {
-									zoom: 4,
-									center: [.97, -93.26]
-									
-								}
+					  map: {
+						zoom: 4,
+						center: [.97, -93.26]
+						},
+					localWeather: {
+                				showOnInit: true
+           					}
 				}
 			});
 			aerisMapBuilder
