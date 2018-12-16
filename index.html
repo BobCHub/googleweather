@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-	<meta charset='utf-8' />
-	<title></title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<style>
-		body { margin:0; padding:0; }
-		#map { position:absolute; top:0; bottom:0; width:100%; }
-	</style>
-</head>
-<body>
-<div id='map'></div>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="map-canvas" style="margin-left:auto; margin-right:auto; width:800px; height:500px"> </div>
+		<link media="screen" type="text/css" rel="stylesheet" href="//cdn.aerisjs.com/aeris-interactive/assets/css/default/style.css">
+		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAm8px3bGu6N8CBodzurFU6dZp83IyYe5E"></script><script type="text/javascript" src="//cdn.aerisjs.com/aeris-interactive/aim-gmaps.js"></script><script type="text/javascript">
 
-<script>
-	var gmap;
-	function initMap() {
-		gmap = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: 48.538148, lng: -123.463368},
-			
-			zoom: 7
-		});
-
-		var radar = new google.maps.ImageMapType({
-			getTileUrl: function(coord, zoom) {
-				return ['https://maps.aerisapi.com/XX6QcpP0mc8ip75TAUL6H_WvyNmj1nubTD48RF33eVN5iRmrgHkB4bTH0mwn0l/radar/',
-					zoom, '/', coord.x, '/', coord.y, '/current.png'].join('');
-			},
-			tileSize: new google.maps.Size(256, 256)
-		});
-		gmap.overlayMapTypes.push(radar);
-
-	}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm8px3bGu6N8CBodzurFU6dZp83IyYe5E&callback=initMap"
-		async defer></script>
-</body>
+			var aerisMapBuilder = new aeris.interactive.MapAppBuilder({
+				apiId: 'XX6QcpP0mc8ip75TAUL6H',
+				apiSecret: 'WvyNmj1nubTD48RF33eVN5iRmrgHkB4bTH0mwn0l',
+				el: '#map-canvas',
+				modules: {
+								map: {
+									zoom: 4,
+									center: [.97, -93.26]
+									
+								}
+				}
+			});
+			aerisMapBuilder
+				
+				.start()
+				.done(function() {
+					console.log('Aeris Interactive Maps is initialized.');
+				})
+				.fail(function(err) {
+					console.error(err);
+				});
+		</script>
+	</body>
 </html>
