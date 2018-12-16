@@ -8,11 +8,14 @@
 		<div id="map-canvas" style="margin-left:auto; margin-right:auto; width:500px; height:400px"> </div>
 		<link media="screen" type="text/css" rel="stylesheet" href="//cdn.aerisjs.com/aeris-interactive/assets/css/default/style.css">
 		
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAm8px3bGu6N8CBodzurFU6dZp83IyYe5E"></script><script type="text/javascript" src="//cdn.aerisjs.com/aeris-interactive/aim-gmaps.js"></script><script type="text/javascript">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyAm8px3bGu6N8CBodzurFU6dZp83IyYe5E"></script>
+		<script type="text/javascript" src="//cdn.aerisjs.com/aeris-interactive/aim-gmaps.js"></script>
+		<script type="text/javascript">
 
 			var aerisMapBuilder = new aeris.interactive.MapAppBuilder({
 				apiId: 'XX6QcpP0mc8ip75TAUL6H',
 				apiSecret: 'WvyNmj1nubTD48RF33eVN5iRmrgHkB4bTH0mwn0l',
+				unitsType: Units.Type.Metric,
 				el: '#map-canvas',
 				modules: {
 					  map: {
@@ -24,7 +27,35 @@
            					}, 
 					geosearch: {
                 				geolocate: true
-           					 }
+           					 }, 
+					units: {
+					imperial: {
+						temp: '°F',
+						speed: ' mph',
+						distance: ' mi',
+						height: ' ft',
+						pressure: ' in',
+						percent: '%',
+						precip: '"',
+						rain: '"',
+						snow: '"',
+						phrase: ''
+					},
+					metric: {
+						temp: '°C',
+						speed: ' kmh',
+						distance: ' km',
+						height: ' m',
+						pressure: ' mb',
+						percent: '%',
+						precip: ' mm',
+						rain: ' mm',
+						snow: ' cm',
+						phrase: 'met'
+					}
+					}
+					
+					
 				}
 			});
 			aerisMapBuilder
